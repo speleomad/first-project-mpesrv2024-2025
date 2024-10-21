@@ -13,7 +13,8 @@ export class AboutComponent {
     tel:12345678
   }
   comments=[];
-  comment={date:null,message:"new comment"};
+ // comment={date:null,message:"new comment"};
+ comment={date:null,message:""};
   newComment=false;
   addComment(){
     console.log("Message:"+this.comment.message);
