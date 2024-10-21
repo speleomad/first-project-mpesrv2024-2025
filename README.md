@@ -1,6 +1,19 @@
 # FirstProject
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.9.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.9 and uses node [v18.4.0](https://nodejs.org/dist/v18.14.0/node-v18.14.0-x64.msi)
+
+## Installation
+
+To install the project dependencies, follow these steps:
+
+1. Clone this repository:
+   `git clone https://github.com/speleomad/first-project-mpesrv2024-2025.git` 
+
+2. Navigate into the project directory:
+   `cd FirstProject`
+   
+3. Install the dependencies with npm:
+   `npm install`
 
 ## Development server
 
