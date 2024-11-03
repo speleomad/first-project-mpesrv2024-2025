@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Comment } from '../shared/comment';
 
 @Injectable({
   providedIn: 'root'
@@ -11,16 +12,17 @@ export class AboutService {
   }
   //comments:any[];
   //J'ai fixé le problème, en faite j'ai oublié l'initialisation de la liste comments
-  comments:any[]=[];
+  //comments:any[]=[];
+  comments:Comment[]=[];
   constructor() { }
   getInfo(){
     return this.info;
   }
-  addComment(comment){
+  addComment(comment:Comment){
     comment.date=new Date();
     this.comments.push(comment);
   }
-  getAllComment(){
+  getAllComment():Comment[]{
     return this.comments;
   }
 }
