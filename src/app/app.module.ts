@@ -7,13 +7,15 @@ import { AboutComponent } from './about/about.component';
 import { ContactsComponent } from './contacts/contacts.component';
 import { FormsModule } from '@angular/forms';
 import { GetCharPipe } from './pipes/get-char.pipe';
+import { CommentComponent } from './comment/comment.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AboutComponent,
     ContactsComponent,
-    GetCharPipe
+    GetCharPipe,
+    CommentComponent
   ],
   imports: [
     BrowserModule,

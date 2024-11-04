@@ -18,45 +18,44 @@
                 Add Comment
             </button>
         </div>
-        <div *ngIf="comments.length>0; then listComment  else noComment">
-            demoe demo demo
-        </div>
-        <ng-template #listComment>
-            <h3>Comment list</h3>
-            <ul class="list-group">
-                <ng-container
-                    *ngFor="let comment of comments; let i=index; let isEven=even; let isOdd=odd, let isFirst=first; let isLast=last">
-                    <!--ngClass-->
-                    <li [ngClass]="{'text-success bg-light':isEven, 'impair':isOdd}"
-                        class="list-group-item d-flex justify-content-between align-items-center">
-
-                        {{i}}#{{isFirst}}#{{isLast}}#{{isEven}}#{{isOdd}}#{{comment.message}} <span
-                            class="badge badge-secondary badge-pill">{{comment.date|date:'HH:mm:ss'}}</span>
-                    </li>
-                    <!--NgStyle-->
-                    <!--    <li *ngIf="isEven"
-                      [ngStyle]="{color:colors.even}"
-                     class="list-group-item d-flex justify-content-between align-items-center">
-                   
-                        {{i}}#{{isFirst}}#{{isLast}}#{{isEven}}#{{isOdd}}#{{comment.message}} <span
-                            class="badge badge-secondary badge-pill">{{comment.date|date:'HH:mm:ss'}}</span>
-                      
-                    </li>
-                    <li *ngIf="isOdd"
-                    [ngStyle]="{color:colors.odd}"
-                     class="list-group-item d-flex justify-content-between align-items-center">
-                   
-                        {{i}}#{{isFirst}}#{{isLast}}#{{isEven}}#{{isOdd}}#{{comment.message}} <span
-                            class="badge badge-secondary badge-pill">{{comment.date|date:'HH:mm:ss'}}</span>
-                      
-                    </li> -->
-                </ng-container>
-
-            </ul>
-        </ng-template>
-        <ng-template #noComment>
-            <h3>No comments</h3>
-        </ng-template>
+      <!--  <app-comment [comments]="comments"></app-comment> -->
+      <div *ngIf="comments.length>0; then listComment  else noComment">
+        demoe demo demo
+    </div>
+    <ng-template #listComment>
+        <h3>Comment list</h3>
+        <ul class="list-group">
+            <ng-container
+                *ngFor="let comment of comments; let i=index; let isEven=even; let isOdd=odd, let isFirst=first; let isLast=last"
+                >
+                <app-comment [comment]="comment" [isEven]="isEven" [isOdd]="isOdd"></app-comment>
+                <!--ngClass-->
+               
+                <!--NgStyle-->
+                <!--    <li *ngIf="isEven"
+                  [ngStyle]="{color:colors.even}"
+                 class="list-group-item d-flex justify-content-between align-items-center">
+               
+                    {{i}}#{{isFirst}}#{{isLast}}#{{isEven}}#{{isOdd}}#{{comment.message}} <span
+                        class="badge badge-secondary badge-pill">{{comment.date|date:'HH:mm:ss'}}</span>
+                  
+                </li>
+                <li *ngIf="isOdd"
+                [ngStyle]="{color:colors.odd}"
+                 class="list-group-item d-flex justify-content-between align-items-center">
+               
+                    {{i}}#{{isFirst}}#{{isLast}}#{{isEven}}#{{isOdd}}#{{comment.message}} <span
+                        class="badge badge-secondary badge-pill">{{comment.date|date:'HH:mm:ss'}}</span>
+                  
+                </li> -->
+            </ng-container>
+    
+        </ul>
+    </ng-template>
+    <ng-template #noComment>
+        <h3>No comments</h3>
+    </ng-template>
+    
     </div>
 
 
