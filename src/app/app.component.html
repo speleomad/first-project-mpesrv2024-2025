@@ -1,9 +1,29 @@
 <div class="container">
-    <h1 class="text-center">Welcome to {{title}}!</h1>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary mt-2 mb-4">
+        <a class="navbar-brand" href="#">{{title|uppercase}}</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" routerLink="/about">About <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/contacts">Contacts</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    
+    <router-outlet></router-outlet>
+    
+    <!--   <h1 class="text-center">Welcome to {{title}}!</h1>
     <app-about></app-about>
-    <div app-contacts></div>
+    <div app-contacts></div> -->
 </div>
 
 <!--  <div app-about></div> -->
- <!--  <div class="app-about"></div>
+<!--  <div class="app-about"></div>
  -->
