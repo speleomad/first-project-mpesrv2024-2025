@@ -1,0 +1,32 @@
+<div class="card border-primary mb-3">
+    <div class="card-header bg-primary text-white">
+        Contact Detail Component
+    </div>
+    <div class="card-body">
+        <div *ngIf="contact; else noContact">
+          <h3>Contact detail</h3>
+          <div class="card" style="width:25em">
+             <img src="{{contact.image}}" class="card-img-top" alt="Contact Detail">
+             <div class="card-body">
+                <h3 class="card-title">{{contact.name}}</h3>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><strong>Projects: </strong>{{contact.projects}}</li>
+                    <li class="list-group-item"><strong>Email: </strong>{{contact.email}}</li>
+                    <li class="list-group-item"><strong>Website: </strong>{{contact.website}}</li>
+                </ul>
+             </div>
+            </div>
+        </div>
+        <ng-template #noContact>
+           <div class="alert alert-warning">
+             No Contact Found
+           </div>
+        </ng-template>
+
+    </div>
+   
+</div>
+
+<button class="btn btn-primary" (click)="OnContacts()">
+    Go to contacts
+</button>

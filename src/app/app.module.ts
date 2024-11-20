@@ -11,6 +11,7 @@ import { CommentComponent } from './comment/comment.component';
 import { HomeComponent } from './home/home.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { SigninComponent } from './signin/signin.component';
+import { ContactDetailComponent } from './contact-detail/contact-detail.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { SigninComponent } from './signin/signin.component';
     CommentComponent,
     HomeComponent,
     NotFoundComponent,
-    SigninComponent
+    SigninComponent,
+    ContactDetailComponent
   ],
   imports: [
     BrowserModule,
