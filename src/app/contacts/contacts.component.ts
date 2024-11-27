@@ -20,4 +20,7 @@ export class ContactsComponent implements OnInit{
   onAbout(){
     this.router.navigate(["about"]);
   }
+  onAddContact(){
+    this.router.navigate(["/contacts/edit"]);
+  }
 }
