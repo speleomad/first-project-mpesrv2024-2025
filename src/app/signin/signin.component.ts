@@ -14,11 +14,11 @@ export class SigninComponent implements OnInit {
   }
   onSignIn(){
     this.authService.signIn();
-    this.isAuth=this.authService.isAuthenticated();
+    //this.isAuth=this.authService.isAuthenticated();
   }
   onSignOut(){
     this.authService.signOut();
-    this.isAuth=this.authService.isAuthenticated();
+   // this.isAuth=this.authService.isAuthenticated();
   }
 
 }
