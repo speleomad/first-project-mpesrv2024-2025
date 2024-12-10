@@ -13,6 +13,8 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { SigninComponent } from './signin/signin.component';
 import { ContactDetailComponent } from './contact-detail/contact-detail.component';
 import { EditContactComponent } from './edit-contact/edit-contact.component';
+import { BaseURL } from './shared/baseurl';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -30,9 +32,12 @@ import { EditContactComponent } from './edit-contact/edit-contact.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    {provide:'BaseURL', useValue:BaseURL}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

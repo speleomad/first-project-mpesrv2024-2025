@@ -1,0 +1,41 @@
+{
+  "contacts": [
+    {
+      "id": 1,
+      "name": "Doug Cutting",
+      "email": "doug.cutting@cloudera.com",
+      "website": "http://hadoop.apache.org/",
+      "projects": [
+        "Nuch",
+        "Hadoop"
+      ],
+      "image": "images/doug_cutting.jpg",
+      "featured": true
+    },
+    {
+      "id": 2,
+      "name": "Bill Gates",
+      "email": "bill.gatesg@outlook.com",
+      "website": "https://www.gatesnotes.com/",
+      "projects": [
+        "Microsoft",
+        "Windows"
+      ],
+      "image": "images/bill_gates.jpg",
+      "featured": false
+    },
+    {
+      "id": 3,
+      "name": "Mark Zuckerberg",
+      "email": "bill.gatesg@facebook.com",
+      "website": "https://www.mark-zuckerberg.com/",
+      "projects": [
+        "Facebook",
+        "Instagram"
+      ],
+      "image": "images/mark_zuckerberg.jpg",
+      "featured": true
+    }
+  ],
+  "comments": []
+}

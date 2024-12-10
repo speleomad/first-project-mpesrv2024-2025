@@ -6,7 +6,7 @@
         <div *ngIf="contact; else noContact">
           <h3>Contact detail</h3>
           <div class="card" style="width:25em">
-             <img src="{{contact.image}}" class="card-img-top" alt="Contact Detail">
+             <img src="{{baseUrl+contact.image}}" class="card-img-top" alt="Contact Detail">
              <div class="card-body">
                 <h3 class="card-title">{{contact.name}}</h3>
                 <ul class="list-group list-group-flush">

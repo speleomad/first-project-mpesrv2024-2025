@@ -8,19 +8,40 @@ import { Contact } from '../shared/contact';
   templateUrl: './contacts.component.html',
   styleUrls: ['./contacts.component.css']
 })
-export class ContactsComponent implements OnInit{
-  contacts:Contact[]=[];
-  constructor(private router:Router,private contactService:ContactService){}
+export class ContactsComponent implements OnInit {
+  contacts!: Contact[];
+  //errMess:string;
+  //isWaiting:boolean=true;
+  public constructor(private router: Router, private contactService: ContactService) { }
   ngOnInit(): void {
-   this.contacts=this.contactService.getAllContact();
+    //this.contacts = this.contactService.getContacts();
+    this.contactService.getContacts()
+      .subscribe({
+        next: (contacts) => { this.contacts = contacts; /*this.isWaiting = false;*/ },
+        error: (errmess) => {
+          this.contacts = [];
+          /*this.errMess=<any>errmess;this.isWaiting=false;*/
+        },
+      });
   }
-  deleteContact(id:number){
-    this.contactService.deleteContactById(id);
+  onDelete(id: number) {
+    // this.contactService.deleteContactById(id);
+    this.contactService.deleteContactById(id).subscribe(
+      {
+        next: result => {
+          console.log("contact deleted!");
+          let index = this.contacts.findIndex(contact => contact.id == id)
+          this.contacts.splice(index, 1);
+        }
+      }
+    );
+
   }
-  onAbout(){
-    this.router.navigate(["about"]);
+  onAbout() {
+    this.router.navigate(['/about']);
   }
-  onAddContact(){
-    this.router.navigate(["/contacts/edit"]);
+  onAddContact() {
+    this.router.navigateByUrl('/contacts/edit/-1');
   }
+
 }

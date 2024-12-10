@@ -17,7 +17,7 @@
                 <tr *ngFor="let contact of contacts">
                     <td>{{contact.name}}</td>
                     <td> <a routerLink="/contacts/{{contact.id}}" class="btn btn-success">Detail</a></td>
-                    <td> <button (click)="deleteContact(contact.id)" class="btn btn-danger">Delete</button></td>
+                    <td> <button (click)="onDelete(contact.id)" class="btn btn-danger">Delete</button></td>
                 </tr>
 
             </table>
