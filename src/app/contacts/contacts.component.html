@@ -6,7 +6,7 @@
         Contacts Component
     </div>
     <div class="card-body">
-        <div *ngIf="contacts.length>0; else noContact">
+        <div *ngIf="contacts.length>0; else noContacts">
             <h3>Contact List</h3>
             <table class="table table-hover">
                 <tr>
@@ -17,16 +17,30 @@
                 <tr *ngFor="let contact of contacts">
                     <td>{{contact.name}}</td>
                     <td> <a routerLink="/contacts/{{contact.id}}" class="btn btn-success">Detail</a></td>
+                    <td> <a routerLink="/contacts/edit/{{contact.id}}" class="btn btn-warning">Update</a></td>
                     <td> <button (click)="onDelete(contact.id)" class="btn btn-danger">Delete</button></td>
                 </tr>
 
             </table>
         </div>
-        <ng-template #noContact>
+        <div [hidden]="!isWaiting">
+            <div class="spinner-border" role="status">
+            </div>
+            <h4>Looading... please wait!</h4>
+        </div>
+        <ng-template #noContacts>
+            <p class="alert alert-warning">
+                No contact found!
+            </p>
+            <div *ngIf="errMess" class="alert alert-danger">
+                <strong>Error!</strong> {{errMess}}
+            </div>
+        </ng-template>
+       <!--  <ng-template #noContact>
            <div class="alert alert-warning">
              No Contact Found
            </div>
-        </ng-template>
+        </ng-template> -->
 
     </div>
 

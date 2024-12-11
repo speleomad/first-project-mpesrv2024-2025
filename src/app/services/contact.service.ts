@@ -2,7 +2,8 @@ import { Inject, Injectable } from '@angular/core';
 import { Contact } from '../shared/contact';
 import { CONTACTS } from '../shared/contacts';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { catchError, Observable } from 'rxjs';
+import { ProcessHttpmsgService } from './proccess-httpmsg.service';
 
 @Injectable({
   providedIn: 'root'
@@ -13,15 +14,14 @@ export class ContactService {
     headers:new HttpHeaders({'Content-Type':'application/json'})
   };
 
-  constructor(private http: HttpClient,  @Inject('BaseURL')private baseUrl:string/*,
-              private processHTTPMsgService : ProcesshttpmsgService*/ ) { }
+  constructor(private http: HttpClient,  @Inject('BaseURL')private baseUrl:string,
+              private processHTTPMsgService : ProcessHttpmsgService ) { }
  
   
   getContacts(): Observable<Contact[]> {
     //return this.contacts;
   return  this.http.get<Contact[]>(this.baseUrl+"contacts")
-
-                /*  .pipe(catchError(this.processHTTPMsgService.handleError))*/;
+                 .pipe(catchError(this.processHTTPMsgService.handleError));
   }
 
   getContactById(id: number): Observable<Contact> {

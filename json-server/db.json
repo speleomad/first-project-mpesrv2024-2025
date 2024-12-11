@@ -3,7 +3,7 @@
     {
       "id": 1,
       "name": "Doug Cutting",
-      "email": "doug.cutting@cloudera.com",
+      "email": "doug.cutting@hadoop.com",
       "website": "http://hadoop.apache.org/",
       "projects": [
         "Nuch",
@@ -35,6 +35,18 @@
       ],
       "image": "images/mark_zuckerberg.jpg",
       "featured": true
+    },
+    {
+      "id": 4,
+      "name": "demo2",
+      "email": "demo2@gmail.com",
+      "website": "http://mywebiste.tn",
+      "projects": [
+        "project1",
+        "project2"
+      ],
+      "image": null,
+      "featured": false
     }
   ],
   "comments": []

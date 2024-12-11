@@ -1,15 +1,17 @@
 <div class="card border-primary mb-3">
     <div class="card-header bg-primary text-white "> Edit Contact Component</div>
     <div class="card-body">
-        <h3>Add Contact</h3>    
-        <form  (ngSubmit)="onSubmit(form)" #form="ngForm">    
+        <!-- <h3>Add Contact</h3>   -->  
+        <h3 *ngIf="!contact.id; else update">Add Contact</h3>   
+        <ng-template #update><h3>Update Contact</h3></ng-template> 
+        <form  (ngSubmit)="onSubmit()" #form="ngForm">    
             <div class="form-group">
                 <label for="name">Name</label>
                 <input type="text" class="form-control" name="name" 
                       [ngClass]="{'is-invalid':name.invalid && name.dirty,'is-valid':name.valid}"
                       required 
                       #name="ngModel" 
-                      ngModel>
+                      [(ngModel)]="contact.name">
                 <div *ngIf="name.invalid && name.dirty" class="invalid-feedback">
                         Please provide a name.
                 </div>     
@@ -21,7 +23,8 @@
                     [ngClass]="{'is-invalid':email.invalid && email.dirty,'is-valid':email.valid}"
                      required
                      pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
-                     #email="ngModel" ngModel>
+                     #email="ngModel" 
+                     [(ngModel)]="contact.email">
                      <div *ngIf="email.invalid && email.dirty" class="invalid-feedback">
                         Please provide a valid email address.
                      </div>
@@ -32,7 +35,8 @@
                     [ngClass]="{'is-invalid':website.invalid && website.dirty,'is-valid':website.valid}"
                      required
                      pattern="https?://.+"
-                     #website="ngModel" ngModel>
+                     #website="ngModel" 
+                     [(ngModel)]="contact.website">
                      <div *ngIf="website.invalid && website.dirty" class="invalid-feedback">
                         Please provide a valid URL(http://.....).
                      </div>
@@ -43,7 +47,8 @@
                 <input type="text" class="form-control" name="projects" 
                 [ngClass]="{'is-invalid':projects.invalid && projects.dirty,'is-valid':projects.valid}"
                 required 
-                #projects="ngModel" ngModel>
+                #projects="ngModel"
+                [(ngModel)]="contact.projects">
                 <div *ngIf="projects.invalid && projects.dirty" class="invalid-feedback">
                    Please provide a project.
                 </div>

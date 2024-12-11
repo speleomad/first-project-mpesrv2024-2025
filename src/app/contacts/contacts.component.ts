@@ -10,17 +10,17 @@ import { Contact } from '../shared/contact';
 })
 export class ContactsComponent implements OnInit {
   contacts!: Contact[];
-  //errMess:string;
-  //isWaiting:boolean=true;
+  errMess!:string;
+  isWaiting:boolean=true;
   public constructor(private router: Router, private contactService: ContactService) { }
   ngOnInit(): void {
     //this.contacts = this.contactService.getContacts();
     this.contactService.getContacts()
       .subscribe({
-        next: (contacts) => { this.contacts = contacts; /*this.isWaiting = false;*/ },
+        next: (contacts) => { this.contacts = contacts; this.isWaiting = false; },
         error: (errmess) => {
           this.contacts = [];
-          /*this.errMess=<any>errmess;this.isWaiting=false;*/
+          this.errMess=<any>errmess;this.isWaiting=false;
         },
       });
   }
